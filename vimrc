@@ -12,16 +12,13 @@ set background=dark
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
-
 set nocompatible
 filetype plugin indent on
-
 set noerrorbells                " No beeps
 set number                      " Show line numbers
 set backspace=indent,eol,start  " Makes backspace key more powerful.
 set showcmd                     " Show me what I'm typing
 set showmode                    " Show current mode.
-
 set noswapfile                  " Don't use swapfile
 set nobackup                    " Don't create annoying backup files
 set nowritebackup
@@ -32,12 +29,9 @@ set autowrite                   " Automatically save before :next, :make etc.
 set autoread                    " Automatically reread changed files without asking me anything
 set laststatus=2
 set hidden
-
 set ruler                       " Show the cursor position all the time
 au FocusLost * :wa              " Set vim to save the file on focus out.
-
 set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
-
 set noshowmatch                 " Do not show matching brackets by flickering
 set noshowmode                  " We show the mode with airline or lightline
 set incsearch                   " Shows the match while typing
@@ -50,7 +44,6 @@ set lazyredraw                  " Wait to redraw
 " speed up syntax highlighting
 set nocursorcolumn
 set nocursorline
-
 syntax sync minlines=256
 set synmaxcol=300
 set re=1
@@ -131,11 +124,27 @@ noremap <Leader>n :NERDTreeToggle<cr>
 noremap <Leader>f :NERDTreeFind<cr>
 
 let NERDTreeShowHidden=1
-
 let NERDTreeIgnore=['\.vim$', '\~$', '\.git$', '.DS_Store']
 
 " Close nerdtree and vim on close file
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Check if NERDTree is open or active
+function! rc:isNERDTreeOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function! rc:syncTree()
+  if &modifiable && rc:isNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+" Highlight currently open buffer in NERDTree
+autocmd BufEnter * call rc:syncTree()
 
 " =================== vim-airline ========================
 
@@ -146,5 +155,3 @@ let g:remoteSession = ($STY == "")
 if !g:remoteSession
   let g:airline_powerline_fonts=1
 endif
-
-" vim:ts=2:sw=2:et

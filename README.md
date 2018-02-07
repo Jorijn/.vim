@@ -1,17 +1,20 @@
 # .vim
 
-Just run the following commands via terminal to get perfectly set up:
+My vim dotfiles.
+
+## Install
+
+Run the following commands:
 
 ```console
 $ cd ~/
 $ git clone --recursive https://github.com/mijndert/.vim.git .vim
 $ ln -sf $HOME/.vim/vimrc $HOME/.vimrc
-$ cd $HOME/.vim
-$ git submodule update --init
 ```
 
 ## Pathogen
-The vim dot files make use of the excellent [Pathogen](https://github.com/tpope/vim-pathogen) runtime path manager to install plugins and runtime files into their own private directiories.
+
+The vim dot files make use of the [Pathogen](https://github.com/tpope/vim-pathogen) runtime path manager to install plugins and runtime files into their own private directiories.
 
 ## Plugins Used
 
@@ -22,3 +25,5 @@ The vim dot files make use of the excellent [Pathogen](https://github.com/tpope/
 * [github.com/airblade/vimgutter.git](https://github.com/airblade/vim-gitgutter.git)
 * [github.com/elzr/vim-json](https://github.com/elzr/vim-json.git)
 * [github.com/scrooloose/nerdtree](https://github.com/scrooloose/nerdtree.git)
+
+This is a slimmed down version of [https://github.com/jessfraz/.vim](https://github.com/jessfraz/.vim).
