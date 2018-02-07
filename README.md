@@ -8,7 +8,7 @@ Run the following commands:
 
 ```console
 $ cd ~/
-$ git clone --recursive https://github.com/mijndert/.vim.git .vim
+$ git clone --recursive git@github.com:mijndert/.vim.git .vim
 $ ln -sf $HOME/.vim/vimrc $HOME/.vimrc
 ```
 
