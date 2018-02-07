@@ -50,7 +50,6 @@ set lazyredraw                  " Wait to redraw
 " speed up syntax highlighting
 set nocursorcolumn
 set nocursorline
-
 syntax sync minlines=256
 set synmaxcol=300
 set re=1
@@ -62,9 +61,6 @@ set conceallevel=0
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-"set colorcolumn=79
-"set relativenumber
-"set norelativenumber
 
 " Time out on key codes but not mappings.
 " Basically this makes terminal Vim work sanely.
