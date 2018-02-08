@@ -78,26 +78,6 @@ set ttimeoutlen=10
 set complete=.,w,b,u,t
 set completeopt=longest,menuone
 
-if &history < 1000
-  set history=50
-endif
-
-if &tabpagemax < 50
-  set tabpagemax=50
-endif
-
-if !empty(&viminfo)
-  set viminfo^=!
-endif
-
-if !&scrolloff
-  set scrolloff=1
-endif
-if !&sidescrolloff
-  set sidescrolloff=5
-endif
-set display+=lastline
-
 " This comes first, because we have mappings that depend on leader
 " With a map leader it's possible to do extra key combinations
 " i.e: <leader>w saves the current file
