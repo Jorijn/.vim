@@ -1,9 +1,6 @@
 "
 " load plugins
 "
-let g:pathogen_disabled = []
-call add(g:pathogen_disabled, 'vim-buftabline')
-
 execute pathogen#infect()
 call pathogen#helptags()
 
@@ -13,10 +10,7 @@ call pathogen#helptags()
 syntax enable
 set background=dark
 let g:solarized_termcolors=256
-let g:solarized_termtrans=1
 colorscheme solarized
-
-set nocompatible
 filetype plugin indent on
 
 set noerrorbells                " No beeps
@@ -24,7 +18,6 @@ set number                      " Show line numbers
 set backspace=indent,eol,start  " Makes backspace key more powerful.
 set showcmd                     " Show me what I'm typing
 set showmode                    " Show current mode.
-
 set noswapfile                  " Don't use swapfile
 set nobackup                    " Don't create annoying backup files
 set nowritebackup
@@ -131,4 +124,15 @@ if !g:remoteSession
   let g:airline_powerline_fonts=1
 endif
 
-" vim:ts=2:sw=2:et
+" =================== ctrlp.vim ========================
+map \ :CtrlP<CR>
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_max_height = 10		" maxiumum height of match window
+let g:ctrlp_switch_buffer = 'et'	" jump to a file if it's open already
+let g:ctrlp_mruf_max=450 		" number of recently opened files
+let g:ctrlp_max_files=0  		" do not limit the number of searchable files
+let g:ctrlp_use_caching = 1
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+
