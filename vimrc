@@ -10,7 +10,10 @@ call pathogen#helptags()
 syntax enable
 set background=dark
 let g:solarized_termcolors=256
+let g:solarized_termtrans=1
 colorscheme solarized
+
+set nocompatible
 filetype plugin indent on
 
 set noerrorbells                " No beeps
@@ -18,6 +21,7 @@ set number                      " Show line numbers
 set backspace=indent,eol,start  " Makes backspace key more powerful.
 set showcmd                     " Show me what I'm typing
 set showmode                    " Show current mode.
+
 set noswapfile                  " Don't use swapfile
 set nobackup                    " Don't create annoying backup files
 set nowritebackup
@@ -83,7 +87,7 @@ let g:mapleader = ","
 " Buffer prev/next
 nnoremap <C-z> :bnext<CR>
 nnoremap <C-x> :bprev<CR>
-nmap <leader>q :bd<cr>
+nmap <leader>bd :bd<cr>
 
 " Better split switching
 map <C-j> <C-W>j
@@ -108,7 +112,7 @@ let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeQuitOnOpen = 1
 let NERDTreeIgnore=['\.vim$', '\~$', '\.git$', '.DS_Store']
 let NERDTreeMinimalUI = 1
-"let NERDTreeDirArrows = 1
+let NERDTreeDirArrows = 1
 
 " Close nerdtree and vim on close file
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -116,6 +120,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " =================== vim-airline ========================
 
 let g:airline_theme='solarized'
+"let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 " set to use powerline fonts when not in a ssh session
@@ -123,6 +128,8 @@ let g:remoteSession = ($STY == "")
 if !g:remoteSession
   let g:airline_powerline_fonts=1
 endif
+
+" vim:ts=2:sw=2:et
 
 " =================== ctrlp.vim ========================
 map \ :CtrlP<CR>
