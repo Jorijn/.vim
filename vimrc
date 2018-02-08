@@ -13,7 +13,6 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
 
-set nocompatible
 filetype plugin indent on
 
 set noerrorbells                " No beeps
@@ -87,7 +86,7 @@ let g:mapleader = ","
 " Buffer prev/next
 nnoremap <C-z> :bnext<CR>
 nnoremap <C-x> :bprev<CR>
-nmap <leader>bd :bd<cr>
+nmap <leader>q :bd<cr>
 
 " Better split switching
 map <C-j> <C-W>j
@@ -122,12 +121,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let g:airline_theme='solarized'
 "let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-
-" set to use powerline fonts when not in a ssh session
-let g:remoteSession = ($STY == "")
-if !g:remoteSession
-  let g:airline_powerline_fonts=1
-endif
 
 " vim:ts=2:sw=2:et
 
