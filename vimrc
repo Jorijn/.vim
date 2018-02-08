@@ -1,6 +1,9 @@
 "
 " load plugins
 "
+let g:pathogen_disabled = []
+call add(g:pathogen_disabled, 'vim-buftabline')
+
 execute pathogen#infect()
 call pathogen#helptags()
 
@@ -87,7 +90,7 @@ let g:mapleader = ","
 " Buffer prev/next
 nnoremap <C-z> :bnext<CR>
 nnoremap <C-x> :bprev<CR>
-nmap <leader>bd :bd<cr>
+nmap <leader>q :bd<cr>
 
 " Better split switching
 map <C-j> <C-W>j
@@ -112,7 +115,7 @@ let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeQuitOnOpen = 1
 let NERDTreeIgnore=['\.vim$', '\~$', '\.git$', '.DS_Store']
 let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
+"let NERDTreeDirArrows = 1
 
 " Close nerdtree and vim on close file
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -120,6 +123,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " =================== vim-airline ========================
 
 let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled = 1
 
 " set to use powerline fonts when not in a ssh session
 let g:remoteSession = ($STY == "")
