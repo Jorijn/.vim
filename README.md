@@ -21,6 +21,7 @@ The vim dot files make use of the [Pathogen](https://github.com/tpope/vim-pathog
 * [github.com/ctrlpvim/ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim.git)
 * [github.com/scrooloose/nerdtree](https://github.com/scrooloose/nerdtree.git)
 * [github.com/Xuyuanp/nerdtree-plugin.git](https://github.com/Xuyuanp/nerdtree-git-plugin.git)
+* [github.com/ervandew/supertab](https://github.com/ervandew/supertab.git)
 * [github.com/vim-airline/vim-airline](https://github.com/vim-airline/vim-airline.git)
 * [github.com/vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes.git)
 * [github.com/altercation/vim-colors-solarized](https://github.com/altercation/vim-colors-solarized.git)
