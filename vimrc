@@ -15,6 +15,8 @@ colorscheme solarized
 
 filetype plugin indent on
 
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
 set noerrorbells                " No beeps
 set number                      " Show line numbers
 set backspace=indent,eol,start  " Makes backspace key more powerful.
